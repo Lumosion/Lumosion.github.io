@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <meta charset="utf-8" />
+        <title>图论PLUS | LumosionのBlog</title>
+        <meta name="author" content="Lumosion" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>LUMOSIONのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://lumosion.studio">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Lumosion</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;LUMOSIONのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a target="_blank" rel="noopener" href="https://lumosion.studio">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Lumosion</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>图论PLUS</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/29
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/XCPC/" style="color: #03a9f4">XCPC</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>拓扑排序、Kahn（卡恩）算法</p>
+<span id="more"></span>
+
+<h1 id="图论PLUS"><a href="#图论PLUS" class="headerlink" title="图论PLUS"></a>图论PLUS</h1><h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><h3 id="Kahn（卡恩）算法"><a href="#Kahn（卡恩）算法" class="headerlink" title="Kahn（卡恩）算法"></a>Kahn（卡恩）算法</h3><p>$e[x]$ 存点 $x$ 的邻点，$tp$ 存拓扑序列， $din[x]$ 存点 $x$ 的入度。算法的核心用队列维护一个入度为 $0$ 的节点的集合</p>
+<ol>
+<li>初始化，队列 $q$ 压入所有入度为 $0$ 的点；</li>
+<li>每次从 $q$ 中取出一个点 $×$ 放入数组 $tp$;</li>
+<li>然后将 $x$ 的所有出边删除。若将边 $(x,y)$ 删除后，$y$ 的入度变为  $0$，则将 $y$ 压入 $q$ 中;</li>
+<li>不断重复 $2,3$ 过程，直到队列 $q$ 为空；</li>
+<li>若 $tp$ 中的元素个数等于 $n$ ，则有拓扑序；否则，有环。</li>
+</ol>
+<img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307242033032.png" alt="image-20230724203328976" style="zoom:50%;" />
+
+<pre><code class="C++">const int N = 100010;
+vector&lt;int&gt; e[N]; // e[x] 存点x的邻点
+vector&lt;int&gt; tp;   // 拓扑序列
+int din[N];       // din[x]存点x的入度
+
+bool toposort() // 拓扑排序 卡恩算法
+&#123;
+    queue&lt;int&gt; q; // 临时队列
+    for (int i = 1; i &lt;= n; i++)
+        if (din[i] == 0) // 入度为0，入q
+            q.push(i);
+    while (q.size()) // 队列不为空
+    &#123;
+        int x = q.front();
+        q.pop();            // 出队
+        tp.push_back(x);    // 进拓扑序列
+        for (auto y : e[x]) // 遍历边
+        &#123;
+            if (--din[y] == 0) // 入度减一，判断入度是否为0，进行插入
+                q.push(y);
+        &#125;
+    &#125;
+    return tp.size() == n; // 根据拓扑序列的大小，判断是否有环
+&#125;
+</code></pre>
+<p>找到<strong>字典序最小</strong>的拓扑排序，将队列换为<strong>优先队列（小根堆）</strong>。</p>
+<h3 id="DFS算法"><a href="#DFS算法" class="headerlink" title="DFS算法"></a>DFS算法</h3><p> $e[x]$ 存点 $x$ 的邻点， $tp$ 存拓扑序列， $c[x]$ 存点 $x$ 的颜色。<br>算法的核心是<strong style="color:red;">变色法</strong>，一路搜一路给点变色，如果有拓扑序，每个点的颜色都会从 $0→-1→1$ ，经历三次变色。</p>
+<ol>
+<li>初始状态，所有点染色为 $0$ ；</li>
+<li>枚举每个点，进入 $x$ 点，把 $x$ 染色为 $-1$ 。然后，枚举 $x$ 的儿子 $y$ ，如果 $y$ 的颜色为 $0$ ， 说明没碰过该点，进入 $y$ 继续走；</li>
+<li>如果枚举完 $x$ 的儿子，没发现环，则 $x$ 染色为 $1$ ，并把 $x$ 压入 $tp$ 数组；</li>
+<li>如果发现有个熊孩子的颜色为 $-1$ ，说明回到了祖先节点，发现了环，则一路返回 <code>false</code> ，退出程序</li>
+</ol>
+<pre><code class="C++">
+const int N = 100010;
+int n;            // 顶点数
+vector&lt;int&gt; e[N]; // e[x]=y，代表x-&gt;y的一条边
+vector&lt;int&gt; tp;   // 拓扑序列
+int c[N];         // 染色数组 进入染色为-1，初始为0，已入序列为1
+bool dfs(int x)
+&#123;
+    c[x] = -1;         // 进入染色为-1
+    for (int y : e[x]) // 遍历儿子
+    &#123;
+        if (c[y] &lt; 0)     // 找到-1，代表访问到了父节点，成环
+            return 0;     // 有环
+        else if (!c[y])   // 未染色
+            if (!dfs(y))  // 深搜内发现了父节点
+                return 0; // 有环
+    &#125;
+    c[x] = 1;        // 已入序列，染色为1
+    tp.push_back(x); // 插入拓扑序列
+    return 1;        // 返回成功
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2023 LumosionのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Lumosion
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

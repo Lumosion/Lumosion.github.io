@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <meta charset="utf-8" />
+        <title>树 | LumosionのBlog</title>
+        <meta name="author" content="Lumosion" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>LUMOSIONのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://lumosion.studio">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Lumosion</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;LUMOSIONのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a target="_blank" rel="noopener" href="https://lumosion.studio">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Lumosion</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>树</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/29
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/XCPC/" style="color: #00a596">XCPC</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>并查集</p>
+<span id="more"></span>
+
+<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="并查集（DSU）"><a href="#并查集（DSU）" class="headerlink" title="并查集（DSU）"></a>并查集（DSU）</h2><p>并查集是一种树形的数据结构。<br>支持两种操作：<br><strong>合并</strong>：将两个子集合并成一个集合。<br><strong>查找</strong>：确定某个元素处在哪个集合。</p>
+<p> $fa[x]$ 存节点 $x$ 的父节点，下标从 $1$ 开始有效</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>每个节点是一个集合，每个节点的父节点是它自己。 $fa[i]&#x3D;i$  </p>
+<pre><code class="C++">for (int i = 1; i &lt;= n; i++)
+    fa[i] = i;
+</code></pre>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p><strong>根节点是集合的代表</strong>，查找就是找到元素所在集合的根。</p>
+<ul>
+<li>如果<strong>父节点等于自己</strong>，则找到了根并返回；</li>
+<li>如果还没找到根，则继续递归查找。</li>
+</ul>
+<pre><code class="C++">int find(int x)
+&#123;
+    if (fa[x] == x)
+        return x;
+    return find(fa[x]);
+&#125;
+</code></pre>
+<p><em><strong>带路径压缩的查找</strong></em><br>在返回的路上，顺带修改，各节点的父节点为根。</p>
+<pre><code class="C++">int find(int x)
+&#123;
+    if (fa[x] == x)
+        return x;
+    return fa[x] = find(fa[x]); //修改，各节点的父节点为根
+&#125;
+</code></pre>
+<h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>把一个集合的根指向另一个集合的根。</p>
+<pre><code class="c++">void unionset(int x, int y)
+&#123;
+    fa[find(x)] = find(y);
+&#125;
+</code></pre>
+<p><em><strong>按秩合并</strong></em>（启发式合并）<br>把小集合的根指向大集合的根。</p>
+<pre><code class="c++">// 记录并初始化子树的大小为1
+vector&lt;int&gt; siz(N, 1); // 每个元素的初始规模均为1
+void unionset(int x, int y)
+&#123;
+    x = find(x), y = find(y);
+    if (x == y) // 两者相等不需要合并
+        return;
+    if (siz[x] &gt; siz[y]) // x规模大于y规模
+        swap(x, y);      // 交换x，y位置
+    fa[x] = y;           // 将规模小的合并到规模大的
+    siz[y] += siz[x];    // 新的规模等于二者之和
+&#125;
+</code></pre>
+<h3 id="板子"><a href="#板子" class="headerlink" title="板子"></a>板子</h3><p><em><strong>自己版</strong></em></p>
+<pre><code class="C++">const int N = 5e5;
+int fa[N] = &#123;0&#125;;
+int n;                 // 节点数
+vector&lt;int&gt; siz(N, 1); // 记录子树大小
+void init()            // 初始化
+&#123;
+    for (int i = 1; i &lt;= n; i++)
+        fa[i] = i;
+&#125;
+int find(int x) // 路径压缩查找
+&#123;
+    if (fa[x] == x) // 结束
+        return x;
+    else
+        return fa[x] = find(fa[x]); // 路径压缩
+&#125;
+
+void unionset(int a, int b) // 合并 按秩合并
+&#123;
+    int x = find(a), y = find(b);
+    if (x == y) // 本身处于同一集合，不需要合并
+        return;
+    else
+    &#123;
+        if (siz[x] &gt; siz[y]) // x树大小比y大，交换
+        &#123;
+            swap(x, y);
+        &#125;
+        fa[x] = y;        // 小树当儿子
+        siz[y] += siz[x]; // 大小改变
+    &#125;
+&#125;
+</code></pre>
+<p><em><strong>jiangly版</strong></em></p>
+<pre><code class="C++">struct DSU
+&#123;
+    std::vector&lt;int&gt; f, siz; // x的父亲为f[x] siz-子树大小
+
+    DSU() &#123;&#125;
+    DSU(int n)
+    &#123;
+        init(n);
+    &#125;
+
+    void init(int n) // 初始化
+    &#123;
+        f.resize(n);                      // 重新指定大小
+        std::iota(f.begin(), f.end(), 0); // 初始化自己的父亲为自己
+        siz.assign(n, 1);                 // 初始化子树大小为1
+    &#125;
+
+    int find(int x) // 查找
+    &#123;
+        while (x != f[x]) // 未找到顶
+        &#123;
+            x = f[x] = f[f[x]]; // 路径压缩
+        &#125;
+        return x;
+    &#125;
+
+    bool same(int x, int y) // 检测是否处于同一子树
+    &#123;
+        return find(x) == find(y);
+    &#125;
+
+    bool merge(int x, int y) // 合并
+    &#123;
+        x = find(x);
+        y = find(y);
+        if (x == y) // 不需要合并
+        &#123;
+            return false;
+        &#125;
+        siz[x] += siz[y]; // 字数大小改变
+        f[y] = x;         // 合并最顶节点
+        return true;
+    &#125;
+
+    int size(int x) // 返回子树大小
+    &#123;
+        return siz[find(x)];
+    &#125;
+&#125;;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2023 LumosionのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Lumosion
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

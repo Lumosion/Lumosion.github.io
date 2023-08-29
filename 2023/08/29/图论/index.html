@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <meta charset="utf-8" />
+        <title>图论 | LumosionのBlog</title>
+        <meta name="author" content="Lumosion" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>LUMOSIONのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://lumosion.studio">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Lumosion</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;LUMOSIONのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a target="_blank" rel="noopener" href="https://lumosion.studio">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Lumosion</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>图论</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/29
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/XCPC/" style="color: #ffa2c4">XCPC</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>图的存储、搜索</p>
+<span id="more"></span>
+
+<h1 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h1><h2 id="图的存储"><a href="#图的存储" class="headerlink" title="图的存储"></a>图的存储</h2><p><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191025726.png" alt="image-20230719102529647"></p>
+<h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><p>二维数组 $w[u][v]$ 存储从点 $u$ 到点 $v$ 的边的权值</p>
+<h3 id="边集数组"><a href="#边集数组" class="headerlink" title="边集数组"></a>边集数组</h3><p>边集数组 $e[i]$ 存储第 $i$ 条边的 { 起点 $u$ ,终点 $v$ ,边权 $w$ }</p>
+<p><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191027325.png" alt="image-20230719102709293"></p>
+<p>应用：在<strong>Kruskal算法</strong>中，需要将边按边权排序，直接存边</p>
+<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><p>出边数组 $e[u][i]$ 存储 $u$ 点的所有出边的{ 终点$v$ , 边权 $w$ }</p>
+<p>应用：各种图，<strong style="color:red;">不能处理反向边</strong></p>
+<p><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191030552.png" alt="image-20230719103008523"></p>
+<h3 id="链式邻接表"><a href="#链式邻接表" class="headerlink" title="链式邻接表"></a>链式邻接表</h3><p>边集数组 $e[j]$ 存储第 $j$ 条边的{ 起点 $u$ , 终点 v ,边权 $w$ }<br>表头数组 $h[u][i]$ 存储 $u$ 点的所有出边的编号</p>
+<p>成对性质：与1异或可以找到另一条边。</p>
+<p><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191033978.png" alt="image-20230719103330941" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191033581.png" alt="image-20230719103348552" style="zoom:50%;" /> <img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191034199.png" alt="image-20230719103401166" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191035166.png" alt="image-20230719103514132" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191035058.png" alt="image-20230719103546024"></p>
+<h3 id="链式前向星"><a href="#链式前向星" class="headerlink" title="链式前向星"></a>链式前向星</h3><p> 一个表头数组悬挂多个链表<br>边集数组 $e[i]$ 存储第 $i$ 条出边的{ 终点 $v$, 边权 $w$ ,下一条边 $ne$ }<br>表头数组 $h[u]$ 存储 $u$ 点的第一条出边的编号<br>边的编号 $idx$ 可取 $0,1,2,3…$</p>
+<p><img src="C:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20230719104407798.png" alt="image-20230719104407798" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191045432.png" alt="image-20230719104518403" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191045663.png" alt="image-20230719104544637" style="zoom:50%;" /></p>
+<pre><code class="C++">const int N = 510, M = 3000; // N 最大点数 M 最大边数
+struct edge                  // 边
+&#123;
+    int v, w, ne; // v 终点 w 权值 ne 下一条
+&#125;;
+edge e[M];     // 边集
+int idx, h[N]; // h[N] 点的第一条出边 idx边数
+
+void add(int a, int b, int c) // 加边
+&#123;
+    // 头插法
+    e[idx] = &#123;b, c, h[a]&#125;;
+    h[a] = idx++;
+&#125;
+void dfs(int u, int fa)
+&#123;
+    // 从第一个条出边开始，到达-1找完，下一次找的是下一条e[i].ne
+    for (int i = h[u]; ~i; i = e[i].ne)
+    &#123;
+        int v = e[i].v, w = e[i].w;
+        if (v == fa) // 不能往回找
+            continue;
+        cout &lt;&lt; u &lt;&lt; &quot; &quot; &lt;&lt; v &lt;&lt; &quot; &quot; &lt;&lt; w &lt;&lt; endl; // 访问操作
+        dfs(v, u);                                 // 递归
+    &#125;
+&#125;
+void figure()
+&#123;
+    int n, m, a, b, c;           // n 点数 m 边数
+    cin &gt;&gt; n &gt;&gt; m;               
+    memset(h, -1, sizeof h);     // 初始化为-1
+    for (int i = 1; i &lt;= m; i++) // 输入边
+    &#123;
+        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c; // a、b两顶点，c表示权值
+        add(a, b, c);
+        add(b, a, c);
+    &#125;
+    dfs(1, 0); // 根节点开始dfs
+    return;
+&#125;
+</code></pre>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>深度优先搜索（DFS）</th>
+<th>广度优先搜索（BFS）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>实现</td>
+<td>系统栈</td>
+<td>队列</td>
+</tr>
+<tr>
+<td>搜索顺序</td>
+<td>一搜到底</td>
+<td>逐层扩展</td>
+</tr>
+<tr>
+<td>触碰点的时机</td>
+<td>多次：入、下、回、离</td>
+<td>两次：入队、出队</td>
+</tr>
+<tr>
+<td>时间复杂度</td>
+<td>不回溯 $O(n+m)$ ，回溯 $O(指数级)$</td>
+<td>$O(n+m)$</td>
+</tr>
+<tr>
+<td>连通性问题</td>
+<td>适合</td>
+<td>适合</td>
+</tr>
+<tr>
+<td>方案数问题</td>
+<td>适合</td>
+<td>不适合</td>
+</tr>
+<tr>
+<td>最少步数问题</td>
+<td>不适合</td>
+<td>适合</td>
+</tr>
+</tbody></table>
+<h3 id="深度优先搜索（DFS）"><a href="#深度优先搜索（DFS）" class="headerlink" title="深度优先搜索（DFS）"></a>深度优先搜索（DFS）</h3><h4 id="语句时机"><a href="#语句时机" class="headerlink" title="语句时机"></a>语句时机</h4><p>一般情况：进入时机、下走时机、上回时机、离开时机</p>
+<pre><code class="C++">const int N = 510, M = 3000; // N 最大点数 M 最大边数
+// 链式邻接表
+vector&lt;int&gt; h[N]; // 点的所有出边
+void dfs(int u, int fa)
+&#123;
+    // 进入时机
+    for (auto v : h[u])
+    &#123;
+        if (v == fa)
+            continue;
+        // 下走时机
+        dfs(v, u);
+        // 上回时机
+    &#125;
+    // 离开时机
+&#125;
+</code></pre>
+<p>退化：二叉树的先、中、后序遍历——<strong>线段树</strong></p>
+<pre><code class="C++">void dfs(int u)
+&#123;
+    // 先序
+    dfs(2 * u); // 左儿子
+    // 中序
+    dfs(2 * u + 1); // 右儿子
+    // 后序
+&#125;
+</code></pre>
+<p>再退化：一条链入、离——<strong>并查集</strong></p>
+<pre><code class="C++">const int N = 1e5;
+int next[N] = &#123;0&#125;;
+void dfs(int u)
+&#123;
+    // 入
+    dfs(next[u]);
+    // 离
+&#125;
+</code></pre>
+<h4 id="图的DFS树"><a href="#图的DFS树" class="headerlink" title="图的DFS树"></a>图的DFS树</h4><p>图经过一次DFS访问所生成的树</p>
+<pre><code class="C++">// 链式邻接表
+const int N = 500;
+int vis[N];       // 是否被访问
+vector&lt;int&gt; e[N]; // 邻接表
+
+void dfs(int u)
+&#123;
+    vis[u] = true; // 多增加了标记，防止环无限访问
+    for (auto v : e[u])
+    &#123;
+        if (vis[v])
+            continue;
+        // printf(&quot;%d→%d\n&quot;,u,v);
+        dfs(v);
+    &#125;
+&#125;
+</code></pre>
+<h4 id="DFS与回溯"><a href="#DFS与回溯" class="headerlink" title="DFS与回溯"></a>DFS与回溯</h4><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1605">洛谷 P1605 迷宫</a> ，<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1644">洛谷 P1644 跳马问题</a>  <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1219">洛谷 P1219 八皇后</a></p>
+<p>偏移量 $dx,dy$ ；</p>
+<p><strong>回溯</strong>：锁定已走状态，局部递归完成，释放状态</p>
+<h3 id="广度优先搜索（BFS）"><a href="#广度优先搜索（BFS）" class="headerlink" title="广度优先搜索（BFS）"></a>广度优先搜索（BFS）</h3><p><strong>性质</strong>：先入队，必定先出队，满足二段性（队列中最多同时有两层节点）</p>
+<h4 id="语句时机-1"><a href="#语句时机-1" class="headerlink" title="语句时机"></a>语句时机</h4><p>入队时机、出队时机</p>
+<pre><code class="C++">const int N = 100010;
+vector&lt;int&gt; e[N]; // 边
+int vis[N];       // 是否访问标记
+queue&lt;int&gt; q;     // 队列
+
+void bfs()
+&#123;
+    vis[1] = 1;
+    q.push(1);
+    while (q.size()) // 队列元素是否为空
+    &#123;
+        int x = q.front();
+        q.pop();
+        // 出队时机
+        for (auto y : e[x]) // 遍历与x的相连的边，找出它的儿子
+        &#123;
+            if (vis[y]) // 已经访问过，代表是父亲（？
+                continue;
+            vis[y] = 1;
+            q.push(y);
+            // 入队时机
+        &#125;
+    &#125;
+    // 整体结束时机
+&#125;
+</code></pre>
+<h4 id="图的BFS树"><a href="#图的BFS树" class="headerlink" title="图的BFS树"></a>图的BFS树</h4><p>图经过一次BFS访问所生成的树</p>
+<pre><code class="C++">const int N = 100010;
+vector&lt;int&gt; e[N]; // 边
+int vis[N];       // 是否访问标记
+queue&lt;int&gt; q;     // 队列
+
+void bfs(int s)
+&#123;
+    // 和上面主要是最开始不一样
+    vis[s] = 1;
+    q.push(s);
+    while (q.size()) // 队列元素是否为空
+    &#123;
+        int x = q.front();
+        q.pop();
+        // 出队时机
+        for (auto y : e[x]) // 遍历与x的相连的边，找出它的儿子
+        &#123;
+            if (vis[y]) // 已经访问过，代表是父亲（？
+                continue;
+            vis[y] = 1;
+            q.push(y);
+            // 入队时机
+        &#125;
+    &#125;
+    // 整体结束时机
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2023 LumosionのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Lumosion
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>
