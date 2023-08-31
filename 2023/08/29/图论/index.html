@@ -143,7 +143,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/XCPC/" style="color: #00a596">XCPC</a>
+                <a href="/tags/XCPC/" style="color: #ff7d73">XCPC</a>
             </span>
             
         </span>
@@ -166,7 +166,7 @@
 <p>成对性质：与1异或可以找到另一条边。</p>
 <p><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191033978.png" alt="image-20230719103330941" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191033581.png" alt="image-20230719103348552" style="zoom:50%;" /> <img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191034199.png" alt="image-20230719103401166" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191035166.png" alt="image-20230719103514132" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191035058.png" alt="image-20230719103546024"></p>
 <h3 id="链式前向星"><a href="#链式前向星" class="headerlink" title="链式前向星"></a>链式前向星</h3><p> 一个表头数组悬挂多个链表<br>边集数组 $e[i]$ 存储第 $i$ 条出边的{ 终点 $v$, 边权 $w$ ,下一条边 $ne$ }<br>表头数组 $h[u]$ 存储 $u$ 点的第一条出边的编号<br>边的编号 $idx$ 可取 $0,1,2,3…$</p>
-<p><img src="C:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20230719104407798.png" alt="image-20230719104407798" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191045432.png" alt="image-20230719104518403" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191045663.png" alt="image-20230719104544637" style="zoom:50%;" /></p>
+<p><img src="C:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20230829195723828.png" alt="image-20230829195646603"><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191045432.png" alt="image-20230719104518403" style="zoom:50%;" /><img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202307191045663.png" alt="image-20230719104544637" style="zoom:50%;" /></p>
 <pre><code class="C++">const int N = 510, M = 3000; // N 最大点数 M 最大边数
 struct edge                  // 边
 &#123;

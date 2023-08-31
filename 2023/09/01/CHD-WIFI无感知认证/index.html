@@ -3,7 +3,7 @@
 <html lang="cn">
     <head>
         <meta charset="utf-8" />
-        <title>LumosionのBlog</title>
+        <title> | LumosionのBlog</title>
         <meta name="author" content="Lumosion" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -38,7 +38,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -120,32 +122,11 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background1.png,/images/background2.png,/images/background3.png"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>LumosionのBlog</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
+                <div class="article">
+    <div>
+        <h1></h1>
     </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/09/01/CHD-WIFI%E6%97%A0%E6%84%9F%E7%9F%A5%E8%AE%A4%E8%AF%81/">
-        <h2 class="post-title"></h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -155,10 +136,9 @@
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="CHD-WiFi无感知认证"><a href="#CHD-WiFi无感知认证" class="headerlink" title="CHD-WiFi无感知认证"></a>CHD-WiFi无感知认证</h1><p>通过对CHD-WiFi的研究，发现<strong>长安大学新校园网</strong>可以使用无感知认证，并且在<a target="_blank" rel="noopener" href="https://shenlan.chd.edu.cn:8800/home">自助服务平台</a>就有提供，只是设备之间的配合需要进行简单设置下。</p>
+    
+    <div class="content" v-pre>
+        <h1 id="CHD-WiFi无感知认证"><a href="#CHD-WiFi无感知认证" class="headerlink" title="CHD-WiFi无感知认证"></a>CHD-WiFi无感知认证</h1><p>通过对CHD-WiFi的研究，发现<strong>长安大学新校园网</strong>可以使用无感知认证，并且在<a target="_blank" rel="noopener" href="https://shenlan.chd.edu.cn:8800/home">自助服务平台</a>就有提供，只是设备之间的配合需要进行简单设置下。</p>
 <p><strong style="color:red;">使用无感知认证，意味着隐私保护性可能会弱化，是否使用请自己权衡利弊。</strong></p>
 <h2 id="无感知认证"><a href="#无感知认证" class="headerlink" title="无感知认证"></a>无感知认证</h2><p><strong>无感知认证</strong>主要使用设备间的<strong style="color:red;"><strong>MAC地址</strong></strong>进行识别，设备的MAC地址可以被自动识别和认证，实现网络访问控制和安全认证的技术。</p>
 <p>在这种技术下，用户<strong>无需</strong>输入用户名和密码等信息，系统可以自动识别设备的MAC地址，并与预先设置的MAC地址进行比对，确定设备是否具有网络访问权限。</p>
@@ -184,259 +164,13 @@
 
 <h2 id="三、重新连接"><a href="#三、重新连接" class="headerlink" title="三、重新连接"></a>三、重新连接</h2><p>将<strong>CHD-WiFi</strong>手动<strong>断开</strong>，<strong>重新连接</strong>，等待认证界面的跳出或使用浏览器输入<a target="_blank" rel="noopener" href="https://beiradius.chd.edu.cn/">认证网址</a>，进行账号登陆即可，只要不手动退出登录，之后就无需再次登录了。</p>
 
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/09/01/CHD-WIFI%E6%97%A0%E6%84%9F%E7%9F%A5%E8%AE%A4%E8%AF%81/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/29/%E5%9B%BE%E8%AE%BAplus/">
-        <h2 class="post-title">图论PLUS</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>拓扑排序、Kahn（卡恩）算法</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/XCPC/" style="color: #03a9f4">XCPC</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/29/%E5%9B%BE%E8%AE%BAplus/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/29/3b1b/">
-        <h2 class="post-title">3b1b</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>新数学</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Math/" style="color: #03a9f4">Math</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/29/3b1b/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/29/%E5%9B%BE%E8%AE%BA/">
-        <h2 class="post-title">图论</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>图的存储、搜索</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/XCPC/" style="color: #00bcd4">XCPC</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/29/%E5%9B%BE%E8%AE%BA/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/29/%E6%A0%91%E8%AE%BA/">
-        <h2 class="post-title">树</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>并查集</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/XCPC/" style="color: #ff7d73">XCPC</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/29/%E6%A0%91%E8%AE%BA/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/29/%E6%95%B0%E8%AE%BA/">
-        <h2 class="post-title">数论</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>高精度、快速幂、GVD、质数、筛法、同余式、线性方程、组合数、容斥原理、生成函数</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/XCPC/" style="color: #ffa2c4">XCPC</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Math/" style="color: #ff7d73">Math</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/29/%E6%95%B0%E8%AE%BA/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">1</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
-
     </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Lumosion</div>
-        <div class="description">
-            <p>LumosionのBlog</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://lumosion.studio">Lumosion</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
+    
+    
+    
+    
+    
     
 </div>
 
@@ -468,6 +202,12 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
