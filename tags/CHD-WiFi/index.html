@@ -3,7 +3,7 @@
 <html lang="cn">
     <head>
         <meta charset="utf-8" />
-        <title>3b1b | LumosionのBlog</title>
+        <title>Tags: CHD-WiFi | LumosionのBlog</title>
         <meta name="author" content="Lumosion" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -33,10 +33,6 @@
 
 
 <script src="/js/lib/preview.js"></script>
-
-
-
-
 
 
 
@@ -122,67 +118,74 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div class="article">
-    <div>
-        <h1>3b1b</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/29
+                <div id="archives">
+    
+    <div class="categories-tags">
+        
+        
+        
+        <span>
+            <a href="/tags/Math/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                Math
+            </a>
         </span>
         
         
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
+        
+        <span>
+            <a href="/tags/XCPC/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                XCPC
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/CHD-WiFi/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                CHD-WiFi
+            </a>
+        </span>
+        
+        
+        
+        
+    </div>
+    
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2023/8/29</div>
+            <a href="/2023/08/29/CHD-WIFI%E6%97%A0%E6%84%9F%E7%9F%A5%E8%AE%A4%E8%AF%81/">
+                <h3>3b1b</h3>
+            </a>
+            <div class="info">
                 
-                <a href="/tags/Math/" style="color: #ffa2c4">Math</a>
-            </span>
-            
-        </span>
-        
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/CHD-WiFi/" style="color: #00a596">CHD-WiFi</a>
+                    </span>
+                    
+                </span>
+                
+            </div>
+        </div>
     </div>
-    
-    <div class="content" v-pre>
-        <p>新数学</p>
-<span id="more"></span>
-
-<h1 id="数论-3b1b"><a href="#数论-3b1b" class="headerlink" title="数论-3b1b"></a>数论-3b1b</h1><h2 id="群论-欧拉公式"><a href="#群论-欧拉公式" class="headerlink" title="群论 欧拉公式"></a>群论 欧拉公式</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mvmuCPvRoWQ">Euler’s formula with introductory group theory</a></p>
-<h2 id="二进数"><a href="#二进数" class="headerlink" title="二进数"></a>二进数</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Gs411R7Yo">发明新数学是怎样一种体验？</a></p>
-<p>?  $g(g(64))$ 大数字？gamma函数让阶乘的意义拓展到实数范围内</p>
-<h3 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h3><p>此时 $p\in [0,1]$ </p>
-<p>已知： $( 1 - p ) + p ( 1 - p ) + p ^ { 2 } ( 1 - p ) + p ^ { 3 } ( 1 - p ) + \cdots &#x3D; 1$ </p>
-<img src="https://gitee.com/lumosion/pic-go/raw/master/icpc/Figure/202308191222330.png" style="zoom:33%;" />
-
-<p>两边都除以 $(1-p)$ 得到， $p$ 应该不等于 $1$ ？；</p>
-<h3 id="等比数列求和公式"><a href="#等比数列求和公式" class="headerlink" title="等比数列求和公式"></a><strong>等比数列求和公式</strong></h3><p>此时 $p\in [0,1)$ </p>
-<p> $1 + p + p ^ { 2 } + p ^ { 3 } + \cdots &#x3D; \dfrac { 1 } { ( 1 - p ) }$ </p>
-<h3 id="解析延拓？"><a href="#解析延拓？" class="headerlink" title="解析延拓？"></a><strong>解析延拓？</strong></h3><p> $p$ 定义域发生改变</p>
-<h4 id="eg1"><a href="#eg1" class="headerlink" title="eg1"></a><strong>eg1</strong></h4><p> $( - 1 ) ^ { 0 } + ( - 1 ) ^ { 1 } + ( - 1 ) ^ { 2 } + ( - 1 ) ^ { 3 } + \cdots &#x3D; \dfrac{ 1 } { 1 - ( - 1 ) }$ </p>
-<p>$1 - 1 + 1 - 1 + \cdots &#x3D; \dfrac { 1 } { 2 }$</p>
-<h4 id="eg2"><a href="#eg2" class="headerlink" title="eg2"></a>eg2</h4><p> $2 ^ { 0 } + 2 ^ { 1 } + 2 ^ { 2 } + 2 ^ { 3 } + \cdots &#x3D; \dfrac { 1 } { 1 - 2 }$ </p>
-<p> $1 + 2 + 4 + 8 + \cdots &#x3D; - 1$ </p>
-<h3 id="距离函数-勒贝格测度"><a href="#距离函数-勒贝格测度" class="headerlink" title="距离函数 勒贝格测度"></a>距离函数 勒贝格测度</h3><p>定义两个有理数之间的距离  $\operatorname {dis}(a,b)&#x3D;d$ ，正常情况下 $\operatorname {dis}(a,b)&#x3D;d&#x3D;\max(a,b)-\min(a,b)$ </p>
-<p>作为距离函数，必须要满足性质： </p>
-<p><strong>平移不变性</strong>： $\operatorname {dis}(a,b)&#x3D;\operatorname {dis}(a+x,b+x) $ ，即两个数加上同样的量 $x$ 他们的距离函数不变</p>
-<p><strong>三角不等式</strong>： $\operatorname {dis} ( A , B ) + \operatorname {dis} ( B , C ) \gt \operatorname {dis} ( A , C )$ </p>
-<p>现在，重新定义距离函数： $dis’(a,b)&#x3D;d’$ </p>
-<h4 id="p-进数"><a href="#p-进数" class="headerlink" title="$p$ 进数"></a>$p$ 进数</h4><p> $2$ 进数，$2$ 进度量</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-    </div>
-    
-    
-    
-    
-    
-    
     
 </div>
 
@@ -214,12 +217,6 @@
             
         </div>
         <script src="/js/main.js"></script>
-        
-        
-
-
-
-
         
     </body>
 </html>
